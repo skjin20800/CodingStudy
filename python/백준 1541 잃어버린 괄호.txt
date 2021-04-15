@@ -1,0 +1,17 @@
+data = input().split("-")
+
+result = 0
+
+origin = data[0].split("+")
+
+for ori in origin:
+    result += int(ori)
+
+for min in data[1:]:  
+  if "+" in min:
+    max = map(int,min.split("+"))
+    result -= sum(max)
+    continue
+  result -= int(min)
+
+print(result)
