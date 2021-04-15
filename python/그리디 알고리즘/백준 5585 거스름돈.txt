@@ -1,0 +1,23 @@
+
+origin = int(input())
+coin = 1000-origin
+result = 0;
+
+result += coin//500
+coin = coin%500
+
+result += coin//100
+coin = coin%100
+
+result += coin//50
+coin = coin%50
+
+result += coin//10
+coin = coin%10
+
+result += coin//5
+coin = coin%5
+
+result += coin//1
+
+print(result)
