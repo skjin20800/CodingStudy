@@ -1,0 +1,15 @@
+coin = list(map(int,input().split()))
+coinlist = []
+count = 0
+
+for i in range(coin[0]):
+    coinlist.append(int(input()))
+
+coinlist.sort(reverse=True);
+
+for i in coinlist:
+        count += coin[1] // i
+        coin[1] = coin[1] % i
+        if coin[1] == 0 : break
+
+print(count)
