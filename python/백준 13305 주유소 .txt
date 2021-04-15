@@ -1,0 +1,17 @@
+cityCount = int(input())
+need = list(map(int,input().split()))
+price =  list(map(int,input().split()))
+
+buyLiter = price[0]
+result = 0
+for i in range(cityCount):
+  if i == (cityCount-1):    
+    break
+
+  if price[i] < buyLiter:
+    buyLiter = price[i]
+    
+  result += buyLiter * need[i]
+  
+print(result)
+
