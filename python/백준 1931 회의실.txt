@@ -1,0 +1,17 @@
+n = int(input())
+timelist = []
+for i in range(n):
+    k1, k2 = map(int,input().split())
+    timelist.append((k1,k2))
+
+# sorted(timelist, key=lambda x:x[1])
+timelist.sort(key=lambda x:(x[1],x[0]))
+
+resultlist = [0,0]
+count = 0;
+for time in timelist:
+    if resultlist[1] <= time[0]:
+        resultlist = time
+        count += 1;
+
+print(count)
