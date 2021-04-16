@@ -1,0 +1,12 @@
+n = int(input())
+datas = list(map(int,input().split()))
+result = 0;
+sum = 0;
+
+datas.sort()
+
+for data in datas:
+    result += data
+    sum += result
+
+print(sum)
