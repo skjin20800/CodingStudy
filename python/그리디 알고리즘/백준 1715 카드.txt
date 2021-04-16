@@ -12,6 +12,7 @@ for i in range(a) :
 result = 0
 heapq.heapify(list)
 
+
 while len(list)>1:
   a = heapq.heappop(list)
   b = heapq.heappop(list)
