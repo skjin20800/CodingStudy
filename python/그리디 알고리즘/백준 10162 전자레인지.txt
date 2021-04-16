@@ -1,0 +1,20 @@
+time = int(input())
+
+
+five =0
+one =0
+second =0
+
+five = time//300
+time = time%300
+
+one = time//60
+time = time%60
+
+second = time//10
+time = time%10
+
+if 0<time<10 :
+  print("-1")
+else :
+  print (str(five) +" "+ str(one) +" "+ str(second))
