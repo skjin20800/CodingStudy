@@ -1,0 +1,19 @@
+import sys
+
+i = 0
+while True:
+  use,all,vacation = list(map(int,sys.stdin.readline().split()))
+  result = 0
+
+  if use == 0 and all == 0 and vacation == 0 :
+    break;
+
+  result += use*(vacation//all)
+  vacation %= all
+    
+  if vacation >= use :
+    result += use
+  elif vacation < use :
+    result += vacation
+  i += 1
+  print("Case "+str(i)+": "+str(result))
