@@ -1,0 +1,50 @@
+import sys
+
+input = sys.stdin.readline
+
+a1 = int(input())
+pluslist = []
+minlist = []
+result = 0
+
+for i in range(a1):
+  num = int(input())
+  if num > 0 :
+    pluslist.append(num)
+  else :
+    minlist.append(num)
+  
+pluslist.sort(reverse=True)
+pcount = len(pluslist)
+
+minlist.sort()
+mcount = len(minlist)
+
+for i in range(0,pcount,2) :
+  a = pluslist[i]
+  
+  if pcount%2 > 0 and i == (pcount-1) :
+    result += a
+    break  
+    
+  b = pluslist[i+1]
+
+  if pluslist[i] > 1 and pluslist[i+1] > 1 :
+    result += a*b
+  else :
+    result += a+b
+    
+for i in range(0,mcount,2) :
+  a = minlist[i]
+  
+  if mcount%2 > 0 and i == (mcount-1) :
+    result += a
+    break  
+    
+  b = minlist[i+1]
+  if minlist[i] <= 0 and minlist[i+1] <= 0 :
+    result += a*b
+  else :
+    result += a+b  
+
+print(result)
