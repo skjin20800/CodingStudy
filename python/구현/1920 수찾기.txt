@@ -1,0 +1,29 @@
+왜 시간초과 뜨는지 모르겠다 ㄹㅇ ;
+import sys
+input2 = sys.stdin.readline
+
+a = int(input2())
+bs = list(map(int,input2().split()))
+bs.sort()
+
+c = int(input2())
+ds = list(map(int,input2().split()))
+
+def search(list,key):
+  mid = a//2
+  last = a-1
+  while True :
+    if key == list[mid]:
+      print(1)
+      return 1    
+    elif key > list[mid]:
+      mid = mid+1    
+    elif key < list[mid]:
+      mid = mid-1
+
+    if mid < 0 or mid >last :
+      print(0)
+      return 0
+
+for i in range(c):
+  search(bs,ds[i])
