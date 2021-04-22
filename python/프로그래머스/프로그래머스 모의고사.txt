@@ -1,0 +1,31 @@
+def solution(answers):
+    answer = []
+    a = []
+    b = []
+    c = []
+    pointA = 0
+    pointB = 0
+    pointC = 0
+    while len(a) < len(answers):
+        a.extend([1,2,3,4,5])
+    while len(b) < len(answers):
+        b.extend([2,1,2,3,2,4,2,5])
+    while len(c) < len(answers):
+        c.extend([3,3,1,1,2,2,4,4,5,5])
+    
+    for i in range(len(answers)):
+        if a[i] == answers[i]:
+            pointA += 1
+        if b[i] == answers[i]:
+            pointB += 1
+        if c[i] == answers[i]:
+            pointC += 1
+    
+    key = max(pointA,pointB,pointC)
+    
+    if key == pointA : answer.append(1) 
+    if key == pointB : answer.append(2) 
+    if key == pointC : answer.append(3) 
+
+    
+    return answer
