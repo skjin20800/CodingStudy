@@ -1,0 +1,19 @@
+def solution(board, moves):
+
+    answer = 0
+    stack = []
+    
+    for move in moves :
+        for sboard in board:
+            if sboard[move-1] != 0:
+                stack.append(sboard[move-1])
+                sboard[move-1] = 0
+                
+                if len(stack) >= 2 :
+                    if stack[-1] == stack[-2]:                        
+                        stack.pop()
+                        stack.pop()
+                        answer +=1
+                 
+                break
+    return answer*2
