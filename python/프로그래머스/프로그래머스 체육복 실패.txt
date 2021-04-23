@@ -1,0 +1,23 @@
+def solution(n, lost, reserve):
+    answer = 0
+    lost.sort()
+    reserve.sort()
+    
+    for res in reserve :
+        for los in lost :
+            if res == los :
+                reserve.remove(res)   
+                lost.remove(los)
+    
+
+    now = n-len(lost)
+        
+    for i in range(0,len(reserve)) :
+        
+        for j in range(0,len(lost)) :
+            if reserve[i] > lost[j] :
+                now += 1
+                reserve[i] = -10
+                lost[j] = 1000
+        
+    return now
