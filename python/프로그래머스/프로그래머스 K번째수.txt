@@ -1,0 +1,8 @@
+def solution(array, commands):
+    answer = []
+    for command in commands :
+        ary_result = array
+        ary_result = ary_result[(command[0]-1):command[1]]
+        ary_result.sort()
+        answer.append(ary_result[(command[2]-1)])   
+    return answer
